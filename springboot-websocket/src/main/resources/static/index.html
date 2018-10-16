@@ -1,0 +1,14 @@
+<html>
+<script type="text/javascript">
+  var ws = new WebSocket('ws://127.0.0.1:8080/websocket');
+  ws.onmessage = function(event) {
+    alert(event.data);
+  };
+
+  function send() {
+   var txt=  document.getElementById("msg").value;
+    ws.send(txt);
+  }
+</script>
+<input type="text" id="msg" value="please type the content here....">
+<button onclick="send('Payne')">Send</button>
